@@ -1,4 +1,4 @@
-# Code for transferring a list (d) of time series signals to NERHVG (Neighbour Edge Restricted Horizontal Visibility Graph)
+# Code for generating NVT parameters for NERHVG algorithms
 # Author: Zahir Khan (https://sites.google.com/view/khanzahir98/home)
 
 def normalise(d): 
@@ -17,7 +17,7 @@ def normalise(d):
 
 
 
-#Creating List of NVT parameters named 'Alphas'
+#Creating a list of NVT parameters named 'Alphas' for a input list of time series signals: 'signal'
 def Alpha(signal,dist):
     idx=[i for i in range(len(signal))]
     cross_idx=[0]
@@ -45,7 +45,7 @@ def Alpha(signal,dist):
             alphas.append(round(alpha,3))
     return alphas
 
-#Generating List of 'AVGNVT_{S,d1,d2}' parameters
+#Generating List of 'AVGNVT_{S,d1,d2}' parameters for the input list of time series signals: 'signal'
 # S= signal, d1= A, d2= B
 def Average_alpha(signal,A,B):
     d1=Alpha(signal,A)
